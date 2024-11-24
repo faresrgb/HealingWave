@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychological State Evolution</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #34495e;
+        }
+
+        canvas {
+            max-width: 800px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        #description {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Evolution of the Patient's Psychological State</h1>
+    <canvas id="psychologicalChart"></canvas>
+    <p id="description">The graph represents the evolution of the patient's psychological state based on test results over time.</p>
+
+    <script>
+        // Sample data for psychological state evolution
+        const labels = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: "Psychological State Score",
+                data: [45, 50, 40, 55, 60], // Replace these values with real test results
+                borderColor: "rgba(75, 192, 192, 1)",
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                fill: true,
+                tension: 0.4
+            }]
+        };
+
+        // Configuration for the chart
+        const config = {
+            type: "line",
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: "top"
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return `Score: ${tooltipItem.raw}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Time (Weeks)"
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: "Psychological Score"
+                        },
+                        min: 0,
+                        max: 100
+                    }
+                }
+            }
+        };
+
+        // Render the chart
+        const ctx = document.getElementById("psychologicalChart").getContext("2d");
+        new Chart(ctx, config);
+    </script>
+    <button center ><a href="index.html">return to home page</a></button>
+</body>
+</html>

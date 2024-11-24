@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Health Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .chat-container {
+      width: 90%;
+      max-width: 500px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+     
+    }
+
+    .chat-header {
+      background: #00796b;
+      color: #ffffff;
+      padding: 15px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      background: #f5f5f5;
+    }
+
+    .message {
+      margin: 10px 0;
+    }
+
+    .user-message {
+      text-align: right;
+    }
+
+    .chatbot-message {
+      text-align: left;
+    }
+
+    .message span {
+      display: inline-block;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 70%;
+    }
+
+    .user-message span {
+      background: #80deea;
+      color: #000;
+    }
+
+    .chatbot-message span {
+      background: #ffccbc;
+      color: #000;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 10px;
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .chat-input button {
+      margin-left: 10px;
+      padding: 10px 15px;
+      border: none;
+      background: #00796b;
+      color: #ffffff;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .chat-input button:hover {
+      background: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      HealingWave Chatbot
+    </div>
+    <div class="chat-box" id="chat-box">
+      <!-- Chat messages will appear here -->
+    </div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Type your message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Predefined chatbot responses
+    const responses = {
+      "hi": "Hello! How can I help you today?",
+      "how are you": "I'm just a bot, but I'm here to listen to you.",
+      "i feel sad": "I'm sorry to hear that. It's okay to feel this way. Would you like to talk more about it?",
+      "i am anxious": "Take a deep breath. It might help to focus on something that makes you feel safe. Want to share more?",
+      "thank you": "You're welcome! Remember, you're not alone.",
+      "bye": "Goodbye! Take care and remember to prioritize your mental well-being.",
+      "default": "I'm here to help, but I may not have all the answers. Consider speaking with a professional if needed."
+    };
+
+    // Function to send a message
+    function sendMessage() {
+      const userInput = document.getElementById("user-input").value.trim();
+      if (userInput === "") return;
+
+      addMessage(userInput, "user-message");
+
+      // Chatbot response logic
+      const response = responses[userInput.toLowerCase()] || responses["default"];
+      setTimeout(() => addMessage(response, "chatbot-message"), 500);
+
+      document.getElementById("user-input").value = "";
+    }
+
+    // Function to add a message to the chat
+    function addMessage(message, className) {
+      const chatBox = document.getElementById("chat-box");
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message", className);
+
+      const messageText = document.createElement("span");
+      messageText.innerText = message;
+
+      messageDiv.appendChild(messageText);
+      chatBox.appendChild(messageDiv);
+
+      chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+    }
+  </script>
+</body>
+</html>

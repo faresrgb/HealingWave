@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychiatry Experts</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .experts-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            gap: 20px;
+        }
+
+        .expert-box {
+            width: 30%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .expert-box:hover {
+            transform: scale(1.05);
+        }
+
+        .expert-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .expert-box h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .expert-box p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* For mobile responsiveness */
+        @media (max-width: 768px) {
+            .experts-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .expert-box {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="experts-container">
+        <!-- Expert 1 -->
+        <div class="expert-box">
+            <img src="assets\téléchargement (3).jpg" alt="Expert 1">
+            <h3>Dr. fares chebbi</h3>
+            <p>Psychiatrist & Clinical Psychologist</p>
+            <p>Dr. fares chebbi specializes in anxiety and mood disorders. With over 15 years of experience, he has helped thousands of patients find relief through personalized therapy and medication.</p>
+        </div>
+
+        <!-- Expert 2 -->
+        <div class="expert-box">
+            <img src="assets\téléchargement (2).jpg" alt="Expert 2">
+            <h3>Dr.janet slimeni</h3>
+            <p>Child & Adolescent Psychiatrist</p>
+            <p>Dr. janet slimeni has extensive experience working with children and teenagers facing depression, ADHD, and trauma. She believes in a holistic approach to mental health care.</p>
+        </div>
+
+        <!-- Expert 3 -->
+        <div class="expert-box">
+            <img src="assets\téléchargement (1).jpg" alt="Expert 3">
+            <h3>Dr. Alissa labiadh</h3>
+            <p>Neuropsychiatrist</p>
+            <p>Dr. Alissa labiadhfocuses on the intersection between neurology and psychiatry, offering innovative treatment plans for individuals with neurological and psychiatric disorders.</p>
+        </div>
+    </div>
+
+</body>
+</html>

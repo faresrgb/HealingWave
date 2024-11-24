@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healing Message</title>
+    <style>
+        /* Style global de la page */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            text-align: center;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Contenu caché par défaut */
+        .content {
+            display: none; /* Initialement masqué */
+            margin-top: 20px;
+        }
+
+        /* Style de l'image */
+        .styled-image {
+            width: auto;
+            height: 300px; /* Hauteur fixe */
+            margin-top: 15px;
+        }
+
+        /* Message de chargement */
+        .loading {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Titre principal -->
+    <h1>Welcome to HealingWave</h1>
+
+    <!-- Message de chargement -->
+    <div class="loading" id="loadingMessage">
+        Loading your healing message...
+    </div>
+
+    <!-- Contenu caché à afficher après un délai -->
+    <div class="content" id="healingContent">
+        <p>
+            Healing isn't a linear process, especially for those who are more experienced or mature. 
+            People who've been through a variety of life challenges often know that healing comes in waves. 
+            There can be moments of progress, followed by setbacks or periods of introspection. 
+            The key is understanding that it's a journey, and sometimes it’s not about being “better” at every moment, 
+            but about continuing to grow, learn, and adapt. Even mature individuals face emotional complexities and realize that healing is often about finding balance rather than achieving a fixed endpoint.
+        </p>
+        <p>So please, do not be ashamed of your current mental status 😊.</p>
+        <img class="styled-image" src="@alpenglowacu.jpg" alt="Healing Message Image">
+    </div>
+    <button class="btn" onclick="alert('Button Clicked!')">
+        <a href="https://www.psyblanchard.fr/test_psychologique_lyon.php">start your test </a>
+      </button>
+      <button><a href="testtt.html">get your result from here</a></button>
+
+    <script>
+        // Exécuter une fois que le DOM est chargé
+        document.addEventListener("DOMContentLoaded", () => {
+            // Attendre 5 secondes avant d'afficher le contenu
+            setTimeout(() => {
+                const healingContent = document.getElementById('healingContent');
+                const loadingMessage = document.getElementById('loadingMessage');
+
+                // Vérifier si les éléments existent avant de les modifier
+                if (healingContent && loadingMessage) {
+                    healingContent.style.display = 'block'; // Afficher le contenu
+                    loadingMessage.style.display = 'none';  // Masquer le message de chargement
+                }
+            }, 5000); // Délai de 5 secondes
+        });
+    </script>
+</body>
+</html>
